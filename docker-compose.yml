@@ -1,0 +1,15 @@
+# Solo para desarrollo local. Credenciales de ejemplo, no son secretos reales.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: cuentas
+      POSTGRES_USER: cuentas_dev
+      POSTGRES_PASSWORD: cuentas_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - cuentas_datos:/var/lib/postgresql/data
+
+volumes:
+  cuentas_datos:
